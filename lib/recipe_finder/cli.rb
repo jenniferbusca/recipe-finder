@@ -20,8 +20,8 @@ class CLI
       puts "Featured recipes:".colorize(:blue).underline
       list_recipes
       puts "Options:".colorize(:blue).underline
-      puts "To get more details on a recipe, enter the #{'recipe number'.colorize(:light_blue)}"
-      puts "To quit, type in '#{'exit'.colorize(:light_blue)}'"
+      puts "Type the #{'recipe number'.colorize(:light_blue)} to get more details on a recipe"
+      puts "Type '#{'exit'.colorize(:light_blue)}' to quit the program"
 
       input = gets.strip.downcase #getting user input and normalizing it
 
@@ -47,9 +47,9 @@ class CLI
       puts "#{selected_recipe.description}"
       puts "Rated #{selected_recipe.rating} stars - #{selected_recipe.num_of_ratings}" unless selected_recipe.rating == nil
       puts "Recipe Options:".colorize(:blue).underline
-      puts "Ready to start cooking? Enter '#{'see recipe'.colorize(:light_blue)}' to open up the recipe in your browser"
-      puts "To see all ingredients in the recipe, type '#{'ingredients'.colorize(:light_blue)}'"
-      puts "If not, type '#{'main menu'.colorize(:light_blue)}' to see the options again or '#{'exit'.colorize(:light_blue)}' to quit the program"
+      puts "Type '#{'see recipe'.colorize(:light_blue)}' to see the recipe in your browser"
+      puts "Type '#{'ingredients'.colorize(:light_blue)}' to see all ingredients in the recipe"
+      puts "Type '#{'main menu'.colorize(:light_blue)}' to see the options again or '#{'exit'.colorize(:light_blue)}' to quit the program"
       recipe_input = gets.chomp.downcase
       case recipe_input
       when "see recipe"

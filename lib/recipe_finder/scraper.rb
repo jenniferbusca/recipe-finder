@@ -2,7 +2,7 @@ class Scraper
 
   attr_accessor :name, :description, :url, :rating, :num_of_ratings, :recipe
 
-  def self.scrape_recipes
+  def self.scrape_recipes #scrapes recipe_list_page and recipe pages to create recipe and ingredient instances
     recipe_list_page = Nokogiri::HTML(open("https://www.bonappetit.com/recipes"))
     recipe_list_page.css("div.card-body").each do |recipe_card|
       recipe_hash = {
