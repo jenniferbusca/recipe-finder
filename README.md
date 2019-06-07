@@ -11,9 +11,13 @@ Add this line to your application's Gemfile:
 gem 'recipe_finder'
 ```
 And then execute:
+```ruby
     $ bundle
+```    
 Or install it yourself as:
+```ruby
     $ gem install recipe_finder
+```
 ## Usage
 
 1) To launch the program, input the following into your command line : "recipe-finder"
