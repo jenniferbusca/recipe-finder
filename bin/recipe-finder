@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "./lib/recipe_finder"
+require_relative "../lib/recipe_finder"
 
 CLI.new.call

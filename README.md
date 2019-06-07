@@ -4,19 +4,19 @@ Welcome to your the Recipe Finder! Once you launch the program, you'll be able t
 
 ## Installation
 
-1) After forking and cloning this to your own repository, open up your command line tool and navigate to your new directory.
-2) Before starting the program, run "bundle install". This should install all of the required gems needed to run the application
-<!-- Add this line to your application's Gemfile:
+<!-- 1) After forking and cloning this to your own repository, open up your command line tool and navigate to your new directory.
+2) Before starting the program, run "bundle install". This should install all of the required gems needed to run the application -->
+Add this line to your application's Gemfile:
 ```ruby
 gem 'recipe_finder'
 ```
 And then execute:
     $ bundle
 Or install it yourself as:
-    $ gem install recipe_finder -->
+    $ gem install recipe_finder
 ## Usage
 
-1) To launch the program input the following into your command line : "./bin/recipe-finder"
+1) To launch the program, input the following into your command line : "recipe-finder"
 2) You'll be presented with a list of featured recipes.
   From here you'll have two options:
   * Type "exit" to quit the program
