@@ -17,10 +17,12 @@ class Scraper
       recipe_page = Nokogiri::HTML(open(full_url))
       ingredients = recipe_page.css("div.keywords")
       ingredients.css("a.keyword").each do |ingredient|
-        if ingredient.attr("href").match(/(ingredient)/) != nil
-          ingredient_text = ingredient.children.text
-          new_ingredient = Ingredient.new(name: ingredient_text, recipe: recipe)
-          recipe.add_ingredient(new_ingredient)
+        unless ingredient.children.text.include?("Recipes")
+          if ingredient.attr("href").match(/(ingredient)/) != nil
+            ingredient_text = ingredient.children.text
+            new_ingredient = Ingredient.new(name: ingredient_text, recipe: recipe)
+            recipe.add_ingredient(new_ingredient)
+          end
         end
       end
     end
