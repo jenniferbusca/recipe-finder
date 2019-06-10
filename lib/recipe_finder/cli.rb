@@ -1,6 +1,6 @@
 class CLI
 
-  attr_accessor :recipe, :ingredient
+  # attr_accessor :recipe, :ingredient
 
   def call #runs program
     puts "Welcome to the Recipe Finder!"
@@ -35,12 +35,9 @@ class CLI
     end
   end
 
-  def find_with_index(input)
-    Recipe.all.find.with_index(1) {|recipe, index|index == input} #finds recipe object by input and returns index
-  end
 
   def recipe_menu(input)
-    selected_recipe = find_with_index(input)
+    selected_recipe = Recipe.find_with_index(input)
     recipe_input = nil #placeholder for recipe_input variable to avoid error when called in next line
     until recipe_input == "main menu"
       puts "#{selected_recipe.name.colorize(:blue).underline}"

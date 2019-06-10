@@ -1,21 +1,28 @@
 class Recipe
 
-  attr_accessor :name, :description, :url, :rating, :num_of_ratings, :ingredients
+  attr_accessor :name, :description, :url, :rating, :num_of_ratings
 
   @@all = []
 
   def initialize(attributes)
     attributes.each {|key, value| self.send(("#{key}="), value)} #allows initialization with undetermined # of values
     @@all << self
-    @ingredients = []
   end
 
   def self.all
     @@all
   end
 
-  def add_ingredient(ingredient_object)
-    @ingredients << ingredient_object if ingredient_object.recipe == self #adds ingredient to a recipe object
+  def ingredients
+    Ingredient.all.select {|ingredient| ingredient.recipe == self}
+  end
+
+  def self.find_with_index(input)
+    @@all.find.with_index(1) {|recipe, index|index == input} #finds recipe object by input and returns index
+  end
+
+  def ingredient_names
+    self.ingredients.map {|ingredient| ingredient.name} #given a recipe, returns an array of ingredients
   end
 
 end

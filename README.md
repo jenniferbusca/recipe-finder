@@ -4,8 +4,6 @@ Welcome to your the Recipe Finder! Once you launch the program, you'll be able t
 
 ## Installation
 
-<!-- 1) After forking and cloning this to your own repository, open up your command line tool and navigate to your new directory.
-2) Before starting the program, run "bundle install". This should install all of the required gems needed to run the application -->
 Add this line to your application's Gemfile:
 ```ruby
 gem 'recipe_finder'
