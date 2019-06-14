@@ -1,7 +1,5 @@
 class CLI
 
-  # attr_accessor :recipe, :ingredient
-
   def call #runs program
     puts "Welcome to the Recipe Finder!"
     puts "Please wait while today's featured recipes load"
@@ -35,7 +33,6 @@ class CLI
     end
   end
 
-
   def recipe_menu(input)
     selected_recipe = Recipe.find_with_index(input)
     recipe_input = nil #placeholder for recipe_input variable to avoid error when called in next line
@@ -53,7 +50,7 @@ class CLI
         system("open", "https://www.bonappetit.com/" + selected_recipe.url) #opens link in browser
       when "ingredients"
         puts "Ingredients".colorize(:blue).underline
-        puts find_ingredients_by_recipe(selected_recipe)
+        puts selected_recipe.find_ingredient_names
       when "exit"
         return
       when "main menu"
@@ -62,10 +59,6 @@ class CLI
         puts "Sorry, can you double check your input?".colorize(:color => :white, :background => :blue)
       end
     end
-  end
-
-  def find_ingredients_by_recipe(recipe)
-    recipe.ingredients.map {|ingredient| ingredient.name} #given a recipe, returns an array of ingredients
   end
 
   def goodbye
