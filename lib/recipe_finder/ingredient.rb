@@ -14,7 +14,7 @@ class Ingredient
   end
 
   def joins
-    Join.all.select {|join| join.ingredient == self }
+    RecipeIngredient.all.select {|join| join.ingredient == self }
   end
 
   def self.find_or_create_by_name(hash)

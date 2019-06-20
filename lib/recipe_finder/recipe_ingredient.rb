@@ -1,4 +1,4 @@
-class Join
+class RecipeIngredient
   attr_accessor :recipe, :ingredient
 
   @@all = []

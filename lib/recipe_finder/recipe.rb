@@ -14,7 +14,7 @@ class Recipe
   end
 
   def joins
-    Join.all.select {|join| join.recipe == self}
+    RecipeIngredient.all.select {|join| join.recipe == self}
   end
 
   def ingredients

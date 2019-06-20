@@ -1,6 +1,7 @@
 class CLI
 
   def call #runs program
+    system "clear"
     puts "Welcome to the Recipe Finder!"
     puts "Please wait while today's featured recipes load"
     Scraper.scrape_recipes

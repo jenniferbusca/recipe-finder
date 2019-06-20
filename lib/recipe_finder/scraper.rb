@@ -19,7 +19,7 @@ class Scraper
           if ingredient.attr("href").match(/(ingredient)/) != nil
             ingredient_text = ingredient.children.text
             new_ingredient = Ingredient.find_or_create_by_name(name: ingredient_text, recipe: recipe)
-            new_join = Join.new(recipe, new_ingredient)
+            new_join = RecipeIngredient.new(recipe, new_ingredient)
           end
         end
       end
